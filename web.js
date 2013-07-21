@@ -5,14 +5,13 @@ app.use(express.logger());
 
 app.get('/', function(request, response) {
 try{
-var content = fs.readFileSync('index.html');
-}catch(e)
-{
+var content = fs.readFileSync('index.html','utf8');
+}catch(e){
 response.send(e);
 }
-//alert(content);
-var buf = new Buffer(256);
-len = buf.write(content,"utf-8");
+console.log(content);
+//var buf = new Buffer(256);
+//len = buf.write(content,"utf-8");
   response.send(content);
 });
 
