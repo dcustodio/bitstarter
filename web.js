@@ -13,7 +13,7 @@ response.send(e);
 //alert(content);
 var buf = new Buffer(256);
 len = buf.write(content,"utf-8");
-  response.send(buf.toString('utf8'));
+  response.send(content);
 });
 
 var port = process.env.PORT || 5000;
